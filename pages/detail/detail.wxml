@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="card" wx:if="{{user}}">
+    <view class="card-header">
+      <text class="card-title">{{user.name}}</text>
+    </view>
+    
+    <view class="detail-item">
+      <text class="detail-label">ID:</text>
+      <text class="detail-value">{{user.id}}</text>
+    </view>
+    
+    <view class="detail-item">
+      <text class="detail-label">用户名:</text>
+      <text class="detail-value">{{user.username}}</text>
+    </view>
+    
+    <view class="detail-item">
+      <text class="detail-label">邮箱:</text>
+      <text class="detail-value">{{user.email}}</text>
+    </view>
+    
+    <view class="detail-item">
+      <text class="detail-label">电话:</text>
+      <text class="detail-value">{{user.phone}}</text>
+    </view>
+    
+    <view class="detail-item">
+      <text class="detail-label">网站:</text>
+      <text class="detail-value">{{user.website}}</text>
+    </view>
+    
+    <view class="detail-item">
+      <text class="detail-label">公司:</text>
+      <text class="detail-value">{{user.company.name}}</text>
+    </view>
+    
+    <view class="detail-item">
+      <text class="detail-label">地址:</text>
+      <text class="detail-value">
+        {{user.address.street}}, {{user.address.suite}}
+        {{user.address.city}}, {{user.address.zipcode}}
+      </text>
+    </view>
+    
+    <button class="btn btn-default" style="width: 100%; margin-top: 20rpx;" bindtap="onBack">返回列表</button>
+  </view>
+  
+  <view wx:if="{{!user}}" style="text-align: center; padding: 40rpx; color: #999;">
+    加载中...
+  </view>
+</view>

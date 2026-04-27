@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="search-box">
+    <input class="search-input" placeholder="搜索用户名或姓名" value="{{searchKeyword}}" bindinput="onSearchInput" />
+  </view>
+  
+  <view class="filter-bar">
+    <button class="filter-btn {{filterType === 'all' ? 'active' : ''}}" bindtap="onFilter" data-type="all">全部</button>
+    <button class="filter-btn {{filterType === 'username' ? 'active' : ''}}" bindtap="onFilter" data-type="username">按用户名</button>
+    <button class="filter-btn {{filterType === 'email' ? 'active' : ''}}" bindtap="onFilter" data-type="email">按邮箱</button>
+  </view>
+  
+  <button class="btn btn-primary" style="margin-bottom: 20rpx;" bindtap="onAddUser">添加用户</button>
+  
+  <view wx:for="{{filteredUsers}}" wx:key="id" class="card">
+    <view class="card-header">
+      <text class="card-title">{{item.name}}</text>
+    </view>
+    <view class="card-subtitle">@{{item.username}}</view>
+    <view class="card-content">{{item.email}}</view>
+    <view class="action-bar">
+      <button class="btn btn-primary btn-small" bindtap="onViewDetail" data-id="{{item.id}}">查看详情</button>
+      <button class="btn btn-primary btn-small" bindtap="onEditUser" data-id="{{item.id}}">编辑</button>
+      <button class="btn btn-danger btn-small" bindtap="onDeleteUser" data-id="{{item.id}}">删除</button>
+    </view>
+  </view>
+  
+  <view wx:if="{{filteredUsers.length === 0}}" style="text-align: center; padding: 40rpx; color: #999;">
+    暂无用户数据
+  </view>
+</view>

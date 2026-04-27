@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="card">
+    <view class="form-item">
+      <text class="form-label">姓名</text>
+      <input class="form-input" placeholder="请输入姓名" value="{{formData.name}}" bindinput="onInputChange" data-field="name" />
+    </view>
+    
+    <view class="form-item">
+      <text class="form-label">用户名</text>
+      <input class="form-input" placeholder="请输入用户名" value="{{formData.username}}" bindinput="onInputChange" data-field="username" />
+    </view>
+    
+    <view class="form-item">
+      <text class="form-label">邮箱</text>
+      <input class="form-input" placeholder="请输入邮箱" value="{{formData.email}}" bindinput="onInputChange" data-field="email" />
+    </view>
+    
+    <view class="form-item">
+      <text class="form-label">电话</text>
+      <input class="form-input" placeholder="请输入电话" value="{{formData.phone}}" bindinput="onInputChange" data-field="phone" />
+    </view>
+    
+    <view class="form-item">
+      <text class="form-label">网站</text>
+      <input class="form-input" placeholder="请输入网站" value="{{formData.website}}" bindinput="onInputChange" data-field="website" />
+    </view>
+    
+    <view class="form-item">
+      <text class="form-label">公司名称</text>
+      <input class="form-input" placeholder="请输入公司名称" value="{{formData.companyName}}" bindinput="onInputChange" data-field="companyName" />
+    </view>
+    
+    <view class="action-bar">
+      <button class="btn btn-primary" style="flex: 1;" bindtap="onSubmit">提交</button>
+      <button class="btn btn-default" style="flex: 1;" bindtap="onCancel">取消</button>
+    </view>
+  </view>
+</view>
